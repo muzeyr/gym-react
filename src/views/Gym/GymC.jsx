@@ -22,8 +22,7 @@ const styles = {
   }
 };
 
-function GymC(props) {
-  const { classes } = props;
+function GymC(props) { 
   return (
     <div> 
           GYM

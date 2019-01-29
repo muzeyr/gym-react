@@ -18,6 +18,7 @@ import NotificationsPage from "views/Notifications/Notifications.jsx";
 import UserProfile from "../views/UserProfile/UserProfile";
 import GymC from "../views/Gym/GymC";
 import NewUser from "../views/UserProfile/NewUser";
+import UserList from "../views/UserProfile/UserList";
 
 const dashboardRoutes = [
   {
@@ -39,7 +40,10 @@ const dashboardRoutes = [
     sidebarName: "Yeni Uye",
     navbarName: "Yeni Üye Tanımlama",
     icon: Person,
-    component: NewUser
+    component: NewUser,
+    frm:{
+      adi:'',soyad:''
+    }
   },
   {
     path: "/user",
@@ -86,4 +90,33 @@ const dashboardRoutes = [
   { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];
 
-export default dashboardRoutes;
+const dashboardRoutesOrj = [
+  {
+    path: "/dashboard",
+    sidebarName: "Dashboard",
+    navbarName: "Spor Salonu Dashboard",
+    icon: Dashboard,
+    component: DashboardPage
+  },
+  {
+    path: "/newUser",
+    sidebarName: "Yeni Uye",
+    navbarName: "Yeni Üye Tanımlama",
+    icon: Person,
+    component: NewUser,
+    frm:{
+      adi:'',soyad:''
+    }
+  },
+  {
+    path: "/userList",
+    sidebarName: "Üye Listesi",
+    navbarName: "Üyeler",
+    icon: Person,
+    component: UserList
+  },
+  
+  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
+];
+
+export default dashboardRoutesOrj;

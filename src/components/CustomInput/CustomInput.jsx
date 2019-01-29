@@ -19,6 +19,7 @@ function CustomInput({ ...props }) {
     labelText,
     id,
     value,
+    onChange,
     labelProps,
     inputProps,
     error,
@@ -46,6 +47,7 @@ function CustomInput({ ...props }) {
         <InputLabel
           className={classes.labelRoot + labelClasses}
           htmlFor={id}
+          
           {...labelProps}
         >
           {labelText}
@@ -58,7 +60,8 @@ function CustomInput({ ...props }) {
           underline: underlineClasses
         }}
         id={id}
-   
+        value={value}
+        onChange={onChange}
         {...inputProps}
       />
       {error ? (
@@ -76,7 +79,7 @@ CustomInput.propTypes = {
   labelProps: PropTypes.object,
   id: PropTypes.string,
   value: PropTypes.string,  
-  inputProps: PropTypes.object,
+  inputProps: PropTypes.object, 
   formControlProps: PropTypes.object,
   error: PropTypes.bool,
   success: PropTypes.bool
